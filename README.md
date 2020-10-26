@@ -1,3 +1,17 @@
+# Recommendations
+
+I had a quick glance at this technical test before cloning the repo. It appears that the functions generally have a variable (referencing an observable) to be missing, or in some cases, the divisor is wrong, e.g. 17, as opposed to 2. Rather straightforward bugs, though you have shown a good grasp of RxJS, featuring even forkjoins, hot/cold, and so forth.
+
+The fundamental problem with this technical test is that if anyone is to go to GitHub and select through the UI the url to paste into the CLI (to clone the repo, as per your instructions in the README, below) they will be default copy the Master. Thereupon, I ran your tests, and was initially confused as I found they passed. Looking further, I noticed the two branches.
+
+To achieve a cloning of only the branch wherein there are bugs, one needs a specfic command:
+
+``` git clone --single-branch --branch test/rxjs https://github.com/hevans90/ng-test-material.git ```
+
+I would advise that you hide this repo in entirety (setting it to private) and present the user an alternate wherein there is no other branch (certainly not one with the "answers"), and no commit history asking people not to cheat; you have no means to verify whether they do.
+
+Nonetheless, I will ignore the "answers" and have a look at the functions, leaving some comments.
+
 # FrontEndTests
 
 This repo is a piece of learning material aimed at people wanting to explore the Angular framework, and [rxjs](https://github.com/ReactiveX/rxjs).
