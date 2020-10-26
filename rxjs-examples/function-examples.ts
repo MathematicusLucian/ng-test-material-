@@ -42,7 +42,12 @@ export const mapExample = (obs1: Observable<number>) =>
  * https://www.learnrxjs.io/learn-rxjs/operators/filtering/filter
  */
 export const filterExample = (obs1: Observable<number>) =>
-  obs1.pipe(filter(val => val % 17 === 0));
+
+// As the comment above states, the payloads should be divisible by 2, not 17
+  // obs1.pipe(filter(val => val % 17 === 0));
+
+  // divisable by 2
+  obs1.pipe(filter(val => val % 2 === 0));
 
 /**
  * Should return a merged observable of two sources
