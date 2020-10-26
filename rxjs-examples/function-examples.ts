@@ -69,7 +69,14 @@ export const mergeExample = (obs1: Observable<any>, obs2: Observable<any>) =>
 export const mergeMapExample = (
   outer: Observable<any>,
   inner: Observable<any>
-) => outer.pipe(mergeMap(outerEmission => inner.pipe(map(val => val + 5))));
+) => 
+
+  // This provides a merge-mapped stream of inner sources & the integer 5, as opposed to inner & outer sources.
+  // It doesn't feature  multiplication
+  // outer.pipe(mergeMap(outerEmission => inner.pipe(map(val => val + 5))));
+
+  // Replace 5 with outer sources, and include multiplication
+  outer.pipe(mergeMap(outerEmission => inner.pipe(map(val => val * + outerEmission))));
 
 /**
  * Should return a switch-mapped stream of inner & outer observables
