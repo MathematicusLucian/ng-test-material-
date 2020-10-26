@@ -6,7 +6,12 @@ import { distinct, filter, map, mergeMap, switchMap } from 'rxjs/operators';
  * https://www.learnrxjs.io/learn-rxjs/operators/combination/concat
  */
 export const concatExample = (obs1: Observable<any>, obs2: Observable<any>) =>
-  concat(obs2);
+
+  // This will fail to concat observables 1 and 2 because it only features the second
+  // concat(obs2);
+
+  //Adding first observable
+  concat(obs1, obs2);
 
 /**
  * Should return a forkJoined observable of two sources
