@@ -18,7 +18,12 @@ export const concatExample = (obs1: Observable<any>, obs2: Observable<any>) =>
  * https://www.learnrxjs.io/learn-rxjs/operators/combination/forkjoin
  */
 export const forkJoinExample = (obs1: Observable<any>, obs2: Observable<any>) =>
-  forkJoin([obs1]);
+
+  // This will fail to join anything, because it only features one observable as a parameter for the forkjoin
+  // forkJoin([obs1]);
+
+  // Adding an extra parameter: the second observable
+  forkJoin([obs1, obs2]);
 
 /**
  * Should return a mapped observable of payloads multiplied by 2
