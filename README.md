@@ -12,6 +12,8 @@ I would advise that you hide this repo in entirety (setting it to private) and p
 
 Nonetheless, I will ignore the "answers" and have a look at the functions, leaving some comments.
 
+There is a security concern. Upgrade object-path to version 0.11.5 or later. ``` A prototype pollution vulnerability has been found in object-path <= 0.11.4 affecting the set() method. The vulnerability is limited to the includeInheritedProps mode (if version >= 0.11.0 is used), which has to be explicitly enabled by creating a new instance of object-path and setting the option includeInheritedProps: true, or by using the default withInheritedProps instance. The default operating mode is not affected by the vulnerability if version >= 0.11.0 is used. Any usage of set() in versions < 0.11.0 is vulnerable.``` 
+
 # FrontEndTests
 
 This repo is a piece of learning material aimed at people wanting to explore the Angular framework, and [rxjs](https://github.com/ReactiveX/rxjs).
