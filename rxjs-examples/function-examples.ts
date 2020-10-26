@@ -30,7 +30,12 @@ export const forkJoinExample = (obs1: Observable<any>, obs2: Observable<any>) =>
  * https://www.learnrxjs.io/learn-rxjs/operators/transformation/map
  */
 export const mapExample = (obs1: Observable<number>) =>
-  obs1.pipe(map(val => val * 4));
+
+  // As the comment above states, the payloads should be multiplied by 2, not 4
+  // obs1.pipe(map(val => val * 4));
+
+  // multiplied by 2
+  obs1.pipe(map(val => val * 2));
 
 /**
  * Should return a filtered observable of payloads divisible by 2
