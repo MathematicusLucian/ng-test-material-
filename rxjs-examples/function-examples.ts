@@ -86,7 +86,14 @@ export const switchMapExample = (
   outer: Observable<any>,
   inner: Observable<any>
 ) =>
+
+  // Why is distinct used here? There is no need to declare "outerEmission" because it is not used
+  // outer.pipe(
+  //   distinct(),
+  //   switchMap(outerEmission => inner)
+  // );
+
+  // Used of an anonymous function
   outer.pipe(
-    distinct(),
-    switchMap(outerEmission => inner)
+    switchMap(() => inner)
   );
