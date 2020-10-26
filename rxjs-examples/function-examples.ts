@@ -54,7 +54,12 @@ export const filterExample = (obs1: Observable<number>) =>
  * https://www.learnrxjs.io/learn-rxjs/operators/combination/merge
  */
 export const mergeExample = (obs1: Observable<any>, obs2: Observable<any>) =>
-  merge(obs1, obs2.pipe(map(payload => payload / 2)));
+
+  // This won't yield the required result because it divides the payload of the second observable by 2
+  // merge(obs1, obs2.pipe(map(payload => payload / 2)));
+
+  // Remove the division of the second observable's paylod
+  merge(obs1, obs2);
 
 /**
  * Should return a merge-mapped stream of inner & outer sources.
